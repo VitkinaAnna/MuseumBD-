@@ -1,0 +1,125 @@
+﻿@model Query
+
+@{
+    ViewData["Title"] = "Запити";
+}
+
+<h1>Запити</h1>
+<hr />
+
+<p>
+    <b>Запит 1</b>
+</p>
+<p>
+   Знайти усіх динозаврів, що знаходяться в залі h1
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="Query1">
+            <input type="hidden" asp-for="Quantity" value="1" />
+            <div class="form-group">
+                <label class="control-label"> Назва зали h1 </label>
+                <select asp-for="HallName" asp-items="@ViewBag.HallNames" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Виконати" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+
+<p>
+    <b>Запит 2</b>
+</p>
+<p>
+   Знайти ціни усіх екскурсій за які відповідає працівник w1
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="Query2">
+            <input type="hidden" asp-for="Quantity" value="1" />
+            <div class="form-group">
+                <label class="control-label"> Ім`я працівника w1 </label>
+                <select asp-for="WorkerName" asp-items="@ViewBag.WorkerNames" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Виконати" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+
+<p>
+    <b>Запит 3</b>
+</p>
+<p>
+   Знайти тривалість життя усіх динозаврів, що знаходяться в залі h2
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="Query3">
+            <input type="hidden" asp-for="Quantity" value="1" />
+            <div class="form-group">
+                <label class="control-label"> Назва зали h2 </label>
+                <select asp-for="HallId" asp-items="@ViewBag.HallIds" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Виконати" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+
+<p>
+    <b>Запит 4</b>
+</p>
+<p>
+   Знайти усіх працівників, що мають посаду p1
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="Query4">
+            <input type="hidden" asp-for="Quantity" value="1" />
+            <div class="form-group">
+                <label class="control-label"> Назва посади p1 </label>
+                <select asp-for="PositionName" asp-items="@ViewBag.PositionNames" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Виконати" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+
+<p>
+    <b>Запит 5</b>
+</p>
+<p>
+   Знайти усіх відвідувачів, що йдуть на екскурсію e1
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="Query5">
+            <input type="hidden" asp-for="Quantity" value="1" />
+            <div class="form-group">
+                <label class="control-label"> Назва екскурсії e1 </label>
+                <select asp-for="ExhibitionName" asp-items="@ViewBag.ExhibitionNames" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Виконати" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+
+

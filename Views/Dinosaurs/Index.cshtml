@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MuseunBD.Dinosaur>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Динозаври</h1>
+
+<p>
+    <a asp-action="Create">Додати динозавра</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lifetime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hall)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lifetime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hall.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DinosaurId">Змінити</a> |
+                <a asp-action="Details" asp-route-id="@item.DinosaurId">Деталі</a> |
+                <a asp-action="Delete" asp-route-id="@item.DinosaurId">Видалити</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

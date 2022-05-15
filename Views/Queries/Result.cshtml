@@ -1,0 +1,137 @@
+﻿@model Query
+
+@{
+    ViewData["Title"] = "Результат";
+}
+
+<h1>Результат</h1>
+<hr />
+
+@if (string.IsNullOrEmpty(Model.ErrorName))
+{
+    @if (Model.QueryName.Equals("A1"))
+    {
+        <p>
+            <b>Всі динозаври з  HallNames = @Model.HallName</b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Назва
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.DinosaurNames.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Model.DinosaurNames[i]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+     @if (Model.QueryName.Equals("A2"))
+    {
+        <p>
+            <b>Всі екскурсії з  WorkerName = @Model.WorkerName</b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Ціна
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.ExhibitionPrices.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Model.ExhibitionPrices[i]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+     @if (Model.QueryName.Equals("A3"))
+    {
+        <p>
+            <b>Всі екскурсії з  HallIds = @Model.HallId</b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Назва
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.DinosaurLifetimes.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Model.DinosaurLifetimes[i]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+     @if (Model.QueryName.Equals("A4"))
+    {
+        <p>
+            <b>Всі працівники з  PositionName = @Model.PositionName</b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Назва
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.WorkerNames.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Model.WorkerNames[i]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+     @if (Model.QueryName.Equals("A5"))
+    {
+        <p>
+            <b>Всі відвідувачі з  ExhibitionName = @Model.ExhibitionName</b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Назва
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.TicketNames.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Model.TicketNames[i]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
